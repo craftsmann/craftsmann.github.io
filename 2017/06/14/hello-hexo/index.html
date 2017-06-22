@@ -1,0 +1,859 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="技术,教程," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Craftsman's Notes" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="快速开始欢迎来到此博客，下面我介绍下用到的技术：  基于nodejs语言的快速、便捷的轻量级框架hexo,star数接近了两万人数； 需要安装nodejs的环境和git环境； 需要注册github账号、密码；并且设置秘钥，这是基础的git教程  使用hosts或者vpn进行翻墙，主要是为了方便使用github；  需要取代记事本的文本编辑器，推荐notepad++ 一个符合自己个性的域名(非必要的">
+<meta name="keywords" content="技术,教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hello Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/06/14/hello-hexo/index.html">
+<meta property="og:site_name" content="Craftsman&#39;s Notes">
+<meta property="og:description" content="快速开始欢迎来到此博客，下面我介绍下用到的技术：  基于nodejs语言的快速、便捷的轻量级框架hexo,star数接近了两万人数； 需要安装nodejs的环境和git环境； 需要注册github账号、密码；并且设置秘钥，这是基础的git教程  使用hosts或者vpn进行翻墙，主要是为了方便使用github；  需要取代记事本的文本编辑器，推荐notepad++ 一个符合自己个性的域名(非必要的">
+<meta property="og:image" content="http://orwkfxzfh.bkt.clouddn.com/blog20170622235655.png">
+<meta property="og:updated_time" content="2017-06-22T16:50:35.131Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hello Hexo">
+<meta name="twitter:description" content="快速开始欢迎来到此博客，下面我介绍下用到的技术：  基于nodejs语言的快速、便捷的轻量级框架hexo,star数接近了两万人数； 需要安装nodejs的环境和git环境； 需要注册github账号、密码；并且设置秘钥，这是基础的git教程  使用hosts或者vpn进行翻墙，主要是为了方便使用github；  需要取代记事本的文本编辑器，推荐notepad++ 一个符合自己个性的域名(非必要的">
+<meta name="twitter:image" content="http://orwkfxzfh.bkt.clouddn.com/blog20170622235655.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/14/hello-hexo/"/>
+
+
+
+
+
+  <title>Hello Hexo | Craftsman's Notes</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6cb13a04ebc8c0a6fdfb27eb4e4d3ac5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Craftsman's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">----手写的从前,莫问过往</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/14/hello-hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Craftsman">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avator1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Craftsman's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hello Hexo</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-14T01:42:25+08:00">
+                2017-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a><strong>快速开始</strong></h1><p>欢迎来到此博客，下面我介绍下用到的技术：</p>
+<ul>
+<li>基于nodejs语言的快速、便捷的轻量级框架<a href="https://github.com/hexojs/hexo" target="_blank" rel="external">hexo</a>,star数接近了两万人数；</li>
+<li>需要安装nodejs的环境和git环境；</li>
+<li><p>需要注册<a href="https://www.github.com" target="_blank" rel="external">github</a>账号、密码；并且设置秘钥，这是基础的<a href="http://www.liaoxuefeng.com/" target="_blank" rel="external">git教程</a></p>
+</li>
+<li><p>使用hosts或者vpn进行翻墙，主要是为了方便使用github；</p>
+</li>
+<li>需要取代记事本的文本编辑器，推荐<a href="https://notepad-plus-plus.org/" target="_blank" rel="external">notepad++</a></li>
+<li>一个符合自己个性的<a href="https://sg.godaddy.com/zh/" target="_blank" rel="external">域名</a>(非必要的)</li>
+</ul>
+<a id="more"></a>
+<p>以上就是应该准备的东西，下面我将此博客搭建完成的过程记录下来，涉及到三个方面：</p>
+<h2 id="一、安装工作"><a href="#一、安装工作" class="headerlink" title="一、安装工作"></a><strong>一、安装工作</strong></h2><p>我主要参考了以下几个详细的博客：</p>
+<ol>
+<li><a href="http://blog.csdn.net/gdutxiaoxu/article/details/53576018" target="_blank" rel="external">手把手教你用Hexo+Github 搭建属于自己的博客</a></li>
+<li><a href="https://my.oschina.net/ryaneLee/blog/638440" target="_blank" rel="external">小白独立搭建博客–Github Pages和Hexo简明教程</a></li>
+<li><a href="http://www.shellsec.com/news/35418.html" target="_blank" rel="external">hexo初探——让写作飞起来</a></li>
+<li><a href="http://www.liaoxuefeng.com/" target="_blank" rel="external">史上最浅显易懂的Git教程</a></li>
+</ol>
+<p>按照以上的教程，你最终会搭建出一个带有<strong>next</strong>主题的大气又不失逼格的博客。前提是你得懂一些git的基础操作和原理，不然对于初学者来说很是困难。</p>
+<h2 id="二、主要难点"><a href="#二、主要难点" class="headerlink" title="二、主要难点"></a><strong>二、主要难点</strong></h2><ul>
+<li>命令的掌握：</li>
+</ul>
+<ol>
+<li><strong>Hexo的命令：</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#1. 新建博文</span></div><div class="line">$ hexo new <span class="string">"标题"</span></div><div class="line"></div><div class="line"><span class="comment">#2.清除缓存</span></div><div class="line">$ hexo clean</div><div class="line"></div><div class="line"><span class="comment">#3.本地调试</span></div><div class="line">$ hexo s -g</div><div class="line"></div><div class="line"><span class="comment">#4.发布远端</span></div><div class="line">$ hexo d -g</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><strong>附加功能的添加</strong></li>
+</ul>
+<ol>
+<li><a href="http://weqeo.com/2016/10/11/Hexo%E4%B8%AD%E6%92%AD%E6%94%BE%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E7%9A%84%E5%AE%9E%E8%B7%B5/" target="_blank" rel="external">网易云音乐集成到任意页面</a></li>
+<li>文章分类、标签和关于我等页面的添加</li>
+</ol>
+<blockquote>
+<p>原因是<strong>next</strong>主题默认没有设置<em>about</em>、<em>categoties</em>、<em>tags</em>页面；而要你自己去配置命令创建。</p>
+<p>首先，要先执行下面的三个命令；</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#在hexo博客目录下执行命令:</span></div><div class="line"></div><div class="line"><span class="comment">#创建关于我页面</span></div><div class="line">$ hexo new page <span class="string">"about"</span></div><div class="line"></div><div class="line"><span class="comment">#创建标签页面</span></div><div class="line">$ hexo new page <span class="string">"tags"</span></div><div class="line"></div><div class="line"><span class="comment">#创建分类页面</span></div><div class="line">$ hexo new page <span class="string">"categories"</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>其次，找到配置文件(_config.yml)设置 Menu Settings<strong>取消掉tags、about、categories前面的注释符号‘#’</strong></p>
+<p>最后，会发现<strong>source</strong> 文件夹下出现了about、tags等文件，里面有md格式的文件用于编辑。</p>
+</blockquote>
+<ol>
+<li>图片存储，使用七牛云存储，个人版免费，只需添加图片的地址类似这样添加</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![图片名称](http://orwkfxzfh.bkt.clouddn.com/blog20170622235655.png)</div></pre></td></tr></table></figure>
+<ol>
+<li>markdown<a href="http://www.appinn.com/markdown/" target="_blank" rel="external">格式</a>、和md文件编辑器，这里我推荐颜值很高的<a href="https://code.visualstudio.com/" target="_blank" rel="external">vscode</a><br>，所见即所得的优秀编辑器。左边编写页，右边视图页。</li>
+</ol>
+<p><img src="http://orwkfxzfh.bkt.clouddn.com/blog20170622235655.png" alt="vscode编辑器"></p>
+<ol>
+<li>git的使用</li>
+</ol>
+<h2 id="三、博客备份"><a href="#三、博客备份" class="headerlink" title="三、博客备份"></a><strong>三、博客备份</strong></h2><p>&emsp;&emsp;博客应该到此搭建成功了，最起码搭建成我的这个样子，剩下的要自己去看<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">文档</a>了；<br>最后，再分享下自己的备份策略吧(应该很重要，想象下博文全部丢了是什么感觉…)：</p>
+<p>通过自己的发现我们发现我们所写的markdown格式的文章都保存在 <code>E:\hexo\source\_posts</code> 这个文件夹下，<br>我们的策略应该有以下的几种：</p>
+<ol>
+<li>U盘、云盘拷贝存储</li>
+<li>Git版本控制</li>
+<li>Git分支控制</li>
+<li>其他软件<br>我采取的是第二中：Git文件对 <code>_posts</code> 这个文件夹进行版本控制：</li>
+</ol>
+<p><strong>步骤如下:</strong>  </p>
+<ol>
+<li>到<a href="https://www.github.com" target="_blank" rel="external">github</a>新建名称为<code>_posts</code>的仓库；直接点击<code>+</code>创建；</li>
+<li><p>接着gitbash进入本地的 <code>E:\hexo\source\_posts</code> 文件夹下，按顺序执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#初始化git仓库</span></div><div class="line">$ git init</div><div class="line"></div><div class="line"><span class="comment">#添加全部文件到暂存区</span></div><div class="line">$ git add .</div><div class="line"></div><div class="line"><span class="comment">#提交到工作区</span></div><div class="line">$ git commit -m <span class="string">'初始化仓库'</span></div><div class="line"></div><div class="line"><span class="comment">#添加远程版本库:复制</span></div><div class="line">$ git remote add origin git@github.com:yourname/_posts.git</div><div class="line"></div><div class="line"><span class="comment">#推送本地的版本库到远程的master分支</span></div><div class="line">$ git push origin master</div></pre></td></tr></table></figure>
+</li>
+<li><p>这样在第一次执行后，每一次编辑文章完成时就要先使用以上的命令(除过第一条)备份文件，然后再执行 <code>hexo d -g</code> 推送文章到自己的站点仓库；千万别弄错了顺序。</p>
+</li>
+<li><p>获得所有文章；这样在以后，你会发现 <code>_posts</code> 仓库保存了所有的文件；你只需执行一条命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> git@github.com:yourname/_posts.git</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>所有的博文都会下载到本地,以后只需要配置环境了，方便迁移。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/技术/" rel="tag"># 技术</a>
+          
+            <a href="/tags/教程/" rel="tag"># 教程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avator1.jpg"
+               alt="Craftsman" />
+          <p class="site-author-name" itemprop="name">Craftsman</p>
+           
+              <p class="site-description motion-element" itemprop="description">泪眼问花花不语，乱红飞过秋千去。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/craftsmann" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/hu-jiao-72-85/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#快速开始"><span class="nav-number">1.</span> <span class="nav-text">快速开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装工作"><span class="nav-number">1.1.</span> <span class="nav-text">一、安装工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、主要难点"><span class="nav-number">1.2.</span> <span class="nav-text">二、主要难点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、博客备份"><span class="nav-number">1.3.</span> <span class="nav-text">三、博客备份</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Craftsman</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
